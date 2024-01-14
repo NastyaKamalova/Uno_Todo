@@ -46,7 +46,7 @@ const StyledInputBox = styled. div`
 `
 const StyledInputText = styled. input`
     width: 100%;
-    color: ${props => props.$isDark ? `var(--border-input-dark)` : `var(--black)`};
+    color: ${props => props.$isDark ? `var(--white)` : `var(--black)`};
     font-family: Roboto;
     font-size: 16px;
     border: none;

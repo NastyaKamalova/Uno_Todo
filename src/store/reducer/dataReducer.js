@@ -11,14 +11,15 @@ import {
 	CHANGE_DEADLINE_DATE_TODO,
 	CHANGE_NOTE_TODO
 } from '../actions/dataActions';
+import { getFormatDateNow } from '../../helpers/date';
 
 function dataReducer(state = dataInitialState, {type, payload}) {
     switch (type) {
-        case CHANGE_LIST_TITLE: return state.map(item => { // payload = {listId, title}
+        case CHANGE_LIST_TITLE: return state.map(item => {
             if (item.id === payload.listId) item.title = payload.title;
             return item
         })
-        case ADD_LIST: return [  // payload = {title}
+        case ADD_LIST: return [
             ...state,
             {
                 id: Date.now(),
@@ -26,8 +27,8 @@ function dataReducer(state = dataInitialState, {type, payload}) {
                 title: payload.title
             }
         ]
-        case REMOVE_LIST: return state.filter(iter => iter.id !== payload.listId) // payload = {listId}
-        case ADD_TODO_TO_LIST: return state.map(item => { // payload = {listId, todoTitle}
+        case REMOVE_LIST: return state.filter(iter => iter.id !== payload.listId)
+        case ADD_TODO_TO_LIST: return state.map(item => { 
             if (item.id === payload.listId) {
                 return {
                     ...item,
@@ -38,7 +39,7 @@ function dataReducer(state = dataInitialState, {type, payload}) {
                             listId: payload.listId,
                             completed: false,
                             important: false,
-                            createDate: Date.now(),
+                            createDate: getFormatDateNow(),
                             deadLineDate: null,
                             title: payload.todoTitle
                         }
@@ -47,7 +48,7 @@ function dataReducer(state = dataInitialState, {type, payload}) {
             }
             return item;
         })
-        case REMOVE_TODO: return state.map(item => { // payload = {listId, todoId}
+        case REMOVE_TODO: return state.map(item => {
             if (item.id === payload.listId) {
                 return {
                     ...item,
@@ -56,7 +57,7 @@ function dataReducer(state = dataInitialState, {type, payload}) {
             }
             return item;
         }) 
-        case CHANGE_TODO_TITLE: return state.map(item => { // payload = {listId, todoId, todoTitle}
+        case CHANGE_TODO_TITLE: return state.map(item => {
             if (item.id === payload.listId) {
                 return {
                     ...item,
@@ -73,7 +74,7 @@ function dataReducer(state = dataInitialState, {type, payload}) {
             }
             return item;
         })
-        case CHANGE_COMPLETED_TODO: return state.map(item => {  // payload = {listId, todoId}
+        case CHANGE_COMPLETED_TODO: return state.map(item => {
             if (item.id === payload.listId) {
                 return {
                     ...item, 
@@ -90,7 +91,7 @@ function dataReducer(state = dataInitialState, {type, payload}) {
             } 
             return item;
         })
-        case CHANGE_IMPORTANT_TODO: return state.map(item => { // payload = {listId, todoId}
+        case CHANGE_IMPORTANT_TODO: return state.map(item => {
             if (item.id === payload.listId) {
                 return {
                     ...item, 
@@ -107,7 +108,7 @@ function dataReducer(state = dataInitialState, {type, payload}) {
             } 
             return item;
         })
-        case CHANGE_DEADLINE_DATE_TODO: return state.map(item => { // payload = {listId, todoId, deadLineDate}
+        case CHANGE_DEADLINE_DATE_TODO: return state.map(item => {
             if (item.id === payload.listId) {
                 return {
                     ...item, 
@@ -124,7 +125,7 @@ function dataReducer(state = dataInitialState, {type, payload}) {
             } 
             return item;
         })
-        case CHANGE_NOTE_TODO: return  state.map(item => { // payload = {listId, todoId, note}
+        case CHANGE_NOTE_TODO: return  state.map(item => {
             if (item.id === payload.listId) {
                 return {
                     ...item, 

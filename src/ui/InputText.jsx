@@ -29,8 +29,7 @@ const StyledInputBox = styled. div`
     position: relative;
     border-bottom: ${props => props.$isDark ? `2px solid var(--border-input-dark)` : `2px solid var(--border-input)`};
     margin-top: 20px;
-   
-	margin-bottom: 20px;
+    margin-bottom: 20px;
     padding: 16px;
     background: ${props => props.$isDark ? `var(--modal-input-dark)` : `var(--background-modal-input)`};
     ${props => props.$error && css`

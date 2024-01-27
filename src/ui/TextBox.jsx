@@ -14,14 +14,14 @@ const TextBox = ({head, body, headColor, bodyColor}) => {
     }
 
     return(
-        <StyledTextBox>
-            <StyledHead $color={headFontColor}>
-                {head} 
-            </StyledHead>
-            <StyledBody $color={bodyFontColor}>
-                {body}
-            </StyledBody>
-        </StyledTextBox>
+            <StyledTextBox>
+                <StyledHead $color={headFontColor}>
+                    {head} 
+                </StyledHead>
+                <StyledBody $color={bodyFontColor}>
+                    {body}
+                </StyledBody>
+            </StyledTextBox>
     )
 }
 export default TextBox;
@@ -30,7 +30,6 @@ const StyledHead = styled.div`
     font-family: Roboto;
     font-size: 28px;
     color: ${props => props.$color};
-
 `
 const StyledBody = styled.div`
     font-family: Roboto;
@@ -44,5 +43,5 @@ const StyledTextBox = styled.div`
     flex-direction: column;
     align-content: space-around;
     align-items: center;
-    padding: 225px 10px;
+    padding-top: 170px;
 `

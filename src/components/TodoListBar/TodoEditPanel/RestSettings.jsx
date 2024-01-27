@@ -18,7 +18,7 @@ const RestSettings = ({createDate, todoId}) => {
                 src={mode === "Dark" ? chevronDarkTheme : chevron} 
                 onClick={() => dispatch(closeTodoPanelAndUnsetActiveTodo({todoId}))}
             />
-            <StyledBox $isDark={mode === "Dark"}>{createDate}</StyledBox>
+            <StyledBox $isDark={mode === "Dark"}>Created {createDate}</StyledBox>
             <StyledIcon
                 src={mode === "Dark" ? deleteDarkTheme : deleteIcon} 
                 onClick={() => dispatch(toggleDeletingTodo({deletingTask:true}))}
@@ -40,16 +40,16 @@ const StyledRestSettings = styled.div`
 const StyledChevron = styled.img`
     position: absolute;
     width: 24px;
-	height: 24px;
-	top: calc(50% - 12px);
-	left:8px;
+    height: 24px;
+    top: calc(50% - 12px);
+    left:8px;
 `
 const StyledIcon = styled.img`
     position: absolute;
     width: 24px;
-	height: 24px;
-	top: calc(50% - 12px);
-	right:8px;
+    height: 24px;
+    top: calc(50% - 12px);
+    right:8px;
 `
 const StyledBox = styled.div`
     ${props => props.$isDark && `color: var(--gray-dark-theme);`}

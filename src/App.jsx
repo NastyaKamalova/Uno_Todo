@@ -24,18 +24,3 @@ function App() {
 }
 
 export default App;
-
-
-
-
-
-
-// const SomeComponent = () => {
-//   return (
-//       <>
-      
-//       </>
-//   )
-// }
-
-// export default SomeComponent;

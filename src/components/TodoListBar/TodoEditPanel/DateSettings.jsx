@@ -60,7 +60,11 @@ const DataSettings = ({deadline, todoId, listId}) => {
             </StyledDeadline>
         )
       }
-      <StyledCloseButton onClick={resetDeadlineHandler} src={mode === "Dark" ? closeDarkTheme : close}/>
+      <StyledCloseButton 
+        onClick={resetDeadlineHandler} 
+        src={mode === "Dark" ? closeDarkTheme : close} 
+        $isEmpty={!deadline}
+      />
     </StyledDateSettings>
   )
 }
@@ -75,16 +79,17 @@ const StyledDateSettings = styled.div`
 const StyledIconButton = styled.img`
   position: absolute;
   width: 24px;
-	height: 24px;
-	top: calc(50% - 12px);
-	left:8px;
+  height: 24px;
+  top: calc(50% - 12px);
+  left:8px;
 `
 const StyledCloseButton = styled.img`
   position: absolute;
   width: 24px;
-	height: 24px;
-	top: calc(50% - 12px);
-	right:8px;
+  height: 24px;
+  top: calc(50% - 12px);
+  right:8px;
+  display: ${props => props.$isEmpty ? 'none' : 'block'};
 `
 const StyledInput = styled.input`
   height: 20px;

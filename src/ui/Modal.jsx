@@ -8,33 +8,44 @@ const Modal = ({header, buttons, children}) => {
     return (
         <>
             <StyledModalBg/>
-            <StyledModal $isDark={mode === "Dark"}>
-                <StyledHeader $isDark={mode === "Dark"}>{header}</StyledHeader>
-                {children}
-                <StyledFooter>
-                    {
-                        buttons.map(button => <Button 
-                            key={button.variant}
-                            variant={button.variant}
-                            clickHandler={button.clickHandler}
-                        >
-                            {button.text}
-                        </Button>)
-                    }
-                </StyledFooter>
-            </StyledModal>
+            <StyledWrapperModal>
+                <StyledModal $isDark={mode === "Dark"}>
+                    <StyledHeader $isDark={mode === "Dark"}>{header}</StyledHeader>
+                    {children}
+                    <StyledFooter>
+                        {
+                            buttons.map(button => <Button 
+                                key={button.variant}
+                                variant={button.variant}
+                                clickHandler={button.clickHandler}
+                            >
+                                {button.text}
+                            </Button>)
+                        }
+                    </StyledFooter>
+                </StyledModal>
+            </StyledWrapperModal>
         </>
     )
 }
 
 export default Modal
 
+const StyledWrapperModal = styled.div`
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    overflow-y: auto;
+`
+
 const StyledModal = styled.div`
     padding: 25px;
     border-radius: 28px;
     background: ${props => props.$isDark ? `var(--black)` : `var(--white)`};
     width: 500px;
-    position: fixed;
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%)

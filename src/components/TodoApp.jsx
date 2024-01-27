@@ -1,5 +1,4 @@
-
-import ModalsWrapper from "./Comon/Modals/ModalsWrapper";
+import ModalsWrapper from "./Common/Modals/ModalsWrapper";
 import SideBar from "./SideBar";
 import TodoListBar from "./TodoListBar";
 import { styled } from "styled-components";
@@ -17,5 +16,6 @@ const TodoApp = () => {
 export default TodoApp;
 
 const StyledAppContainer = styled.main`
+  min-height: 100vh;
   display:flex;
 `;

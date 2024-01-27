@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import styled from "styled-components";
-import EmptyBox from "../Comon/EmptyBox";
+import EmptyBox from "../Common/EmptyBox";
 import Todo from "./TodoListPanel/Todo";
 import { useContext } from "react";
 import AppContext from "../../context/context";

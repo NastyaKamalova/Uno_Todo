@@ -1,3 +1,5 @@
+import { getFormatDateNow } from "../../helpers/date";
+
 const dataInitialState = [
     {
         title:'default todo list',
@@ -10,10 +12,8 @@ const dataInitialState = [
                 completed: false,
                 important: null,
                 deadlineDate: '22 22 22',
-                createDate: 'gdj5555',
+                createDate: getFormatDateNow(),
                 note: 'string'
-
-                    
             }
         ]
     }

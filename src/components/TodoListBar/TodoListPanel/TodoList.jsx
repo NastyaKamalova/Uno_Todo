@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import Todo from "./Todo";
 import styled from "styled-components";
-import EmptyBox from "../../Comon/EmptyBox";
+import EmptyBox from "../../Common/EmptyBox";
 
 const TodoList = () => {
     const lists = useSelector(state => state.data);

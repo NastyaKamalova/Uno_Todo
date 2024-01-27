@@ -4,7 +4,7 @@ import ListEditPanel from "./ListEditPanel"
 import ListSwitcher from "./ListSwitcher"
 import TodoList from "./TodoList"
 import styled from "styled-components"
-import EmptyBox from "../../Comon/EmptyBox"
+import EmptyBox from "../../Common/EmptyBox"
 import AppContext from "../../../context/context"
 import { useContext } from "react"
 
@@ -45,7 +45,7 @@ const StyledTodoListPanel = styled.div`
     width:100%;
     padding: 20px;
     display: flex;
-    height: 100vh;
+    min-height: 100vh;
     flex-direction: column;
     justify-content: space-between;
 `
